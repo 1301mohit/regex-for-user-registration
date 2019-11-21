@@ -21,6 +21,11 @@ function checkMobileNumber()
 	echo "^[0-9]{1,}[ ][0-9]{10}$"
 }
 
+function checkPassword()
+{
+	echo "^[a-zA-Z0-9$&+,:;=?@#|'<>.^*()%!-]{8,}$"
+}
+
 function main()
 {
 	echo "Enter First Name"
@@ -54,6 +59,13 @@ function main()
 		echo format of mobile number is correct
 	else
 		echo format of mobile number is not correct
+	fi
+	read password
+	if [[ $password =~ $( checkPassword ) ]]
+	then
+		echo format of password is correct
+	else
+		echo format of password is not correct
 	fi
 }
 
